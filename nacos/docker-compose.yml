@@ -1,0 +1,10 @@
+# cmp用docker部署的配置
+version: "3.9"
+services: 
+  nacos:
+    image: nacos/nacos-server:2.0.3
+    container_name: nacos
+    ports:
+      - "8848:8848"
+    environment:
+      MODE: standalone

@@ -1,0 +1,12 @@
+# cmp用docker部署的配置
+version: "3.9"
+services: 
+  elasticsearch:
+    image: elasticsearch:7.17.12
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx2g"
